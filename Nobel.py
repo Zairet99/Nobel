@@ -24,8 +24,8 @@ def user_input_features():
 df = user_input_features()
 
 nobel = pd.read_csv('nobel_unido.csv', encoding='latin-1')
-X = nobel.Text
-y = nobel.Label
+X = nobel.Motivation
+y = nobel.Category
 
 vect = CountVectorizer()
 X_dtm = vect.fit_transform(X)
