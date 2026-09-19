@@ -9,7 +9,7 @@ from sklearn.naive_bayes import MultinomialNB
 st.write(''' # NOBEL PRIZES CATEGORY PREDICTION ''')
 st.image("Nobelphoto.webp", caption="It was created by the Swedish inventor Alfred Nobel through his will in 1895.")
 
-st.header('Texto')
+st.header('Text')
 
 def user_input_features():
     # Entrada
