@@ -7,7 +7,7 @@ from sklearn.naive_bayes import MultinomialNB
 
 st.write(''' # Nobel Prize Category Prediction ''')
 st.image("Nobelphoto.webp", caption="It was established by the Swedish inventor Alfred Nobel through his will in 1895.")
-st.header('Texto')
+st.header('Text')
 
 def user_input_features():
   texto = st.text_input("Enter the text to be evaluated:")
