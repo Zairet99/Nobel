@@ -20,7 +20,7 @@ def user_input_features():
 
 df = user_input_features()
 
-nobel =  pd.read_csv('nobel_unido.csv', encoding='latin-1')
+nobel =  pd.read_csv('nobel_unido.csv', encoding='utf-8')
 X = nobel.Motivation
 y = nobel.Category
 
