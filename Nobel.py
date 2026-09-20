@@ -5,12 +5,12 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.naive_bayes import MultinomialNB
 
 
-st.write(''' # Predicción de categoría de Premio Nobel ''')
-st.image("Nobelphoto.webp", caption="Su creador fue el inventor sueco Alfred Nobel mediante su testamento en 1895.")
+st.write(''' # Nobel Prize Category Prediction ''')
+st.image("Nobelphoto.webp", caption="It was established by the Swedish inventor Alfred Nobel through his will in 1895.")
 st.header('Texto')
 
 def user_input_features():
-  texto = st.text_input("Introduce el texto a evaluar")
+  texto = st.text_input("Enter the text to be evaluated:")
 
   user_input_data = {'Text': texto}
 
@@ -35,7 +35,7 @@ prediction = nb.predict(df_dtm)
 
 #{'physics':0, 'medicine':1, 'peace':2, 'literature':3, 'chemistry':4, 'economics':5}
 #'Physics', 'Medicine', 'Peace', 'Literature', 'Chemistry', 'Economics'
-st.subheader('Predicción')
+st.subheader('Prediction')
 if prediction == 0:
   st.write('Physics')
 elif prediction == 1:
@@ -49,4 +49,4 @@ elif prediction == 4:
 elif prediction == 5:
   st.write('Economics')
 else:
-  st.write('Sin predicción')
+  st.write('No Prediction')
