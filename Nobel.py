@@ -32,7 +32,9 @@ nb.fit(X_dtm, y)
 
 df_dtm = vect.transform(df['Text'])
 prediction = nb.predict(df_dtm)
-
+if df['Text'][0].strip() == '':
+  prediction = [-1]
+  
 #{'physics':0, 'medicine':1, 'peace':2, 'literature':3, 'chemistry':4, 'economics':5}
 #'Physics', 'Medicine', 'Peace', 'Literature', 'Chemistry', 'Economics'
 st.subheader('Prediction')
