@@ -22,9 +22,9 @@ df = user_input_features()
 
 nobel =  pd.read_csv('nobel_unido.csv', encoding='utf-8')
 X = nobel.Motivation
-y = nobel.Category
+y = nobel.Categorymap({'Physics':0, 'Medicine':1, 'Peace':2, 'Literature':3, 'Chemistry':4, 'Economics':5})
 
-vect = CountVectorizer()
+vect = CountVectorizer(stop_words='english')
 X_dtm = vect.fit_transform(X)
 
 nb = MultinomialNB()
