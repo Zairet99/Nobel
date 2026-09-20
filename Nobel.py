@@ -7,11 +7,9 @@ from sklearn.naive_bayes import MultinomialNB
 
 st.write(''' # Predicción de categoría de Premio Nobel ''')
 st.image("Nobelphoto.webp", caption="Su creador fue el inventor sueco Alfred Nobel mediante su testamento en 1895.")
-
 st.header('Texto')
 
 def user_input_features():
-  # Entrada
   texto = st.text_input("Introduce el texto a evaluar")
 
   user_input_data = {'Text': texto}
@@ -24,9 +22,9 @@ df = user_input_features()
 
 nobel =  pd.read_csv('nobel_unido.csv', encoding='utf-8')
 X = nobel.Motivation
-y = nobel.Category.map({'Physics':0, 'Medicine':1, 'Peace':2, 'Literature':3, 'Chemistry':4, 'Economics':5})
+y = nobel.Category
 
-vect = CountVectorizer(stop_words='english')
+vect = CountVectorizer()
 X_dtm = vect.fit_transform(X)
 
 nb = MultinomialNB()
